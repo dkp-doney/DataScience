@@ -1,0 +1,15 @@
+fourpmtomid=c(7,7,6,9,8,7,6,7,8,9,0,0,0)
+midtoeig=c(5,6,3,5,4,6,5,4,5,5,6,7,6)
+mean(midtoeig)
+eigtofour=c(1,3,4,3,1,1,2,6,5,4,3,4,5)
+mean(eigtofour)
+x=mean(fourpmtomid)
+stressdata=data.frame(fourpmtomid,midtoeig,eigtofour)
+View(stressdata)
+y=fourpmtomid-x
+z=y*y
+aw=aov(fourpmtomid~midtoeig+eigtofour,data=stressdata)
+summary(aw)
+drop1(aw,~.,test="F")
+k1=lm(mtcars$mpg~mtcars$cyl,data=mtcars)
+summary(k1)
