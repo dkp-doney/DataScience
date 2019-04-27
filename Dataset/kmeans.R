@@ -1,5 +1,7 @@
 x <- runif(50)
 y <- runif(50)
+x
+y
 data <- cbind(x,y)
 data
 
@@ -9,6 +11,5 @@ text(data, rownames(data))
 
 km <- kmeans(data,5)
 str(km)
-f
 km <- kmeans.ani(data, 5)
 km$centers
